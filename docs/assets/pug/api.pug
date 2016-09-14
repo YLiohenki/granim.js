@@ -105,6 +105,11 @@ html(lang="en")
                             td Int
                             td Duration of the animation when changing state.
                         tr
+                            td defaultStateName
+                            td 'default-state'
+                            td String
+                            td The name of the default state.
+                        tr
                             td states <span class="required">(required)</span>
                             td /
                             td Object
@@ -117,7 +122,7 @@ html(lang="en")
                     | All the options available to customize the states and
                     | the different gradients.<br>
                     | Create a state with the name you want then add these parameters.<br>
-                    | Your first state should be named <strong>"default-state"</strong>.
+                    | By default, the name of your first state is <span class="snippet">'default-state'</span>, you can change it with <span class="snippet">options.defaultStateName</span>.
                 table.api-list
                     thead
                         tr
@@ -219,43 +224,40 @@ html(lang="en")
                 pre
                     code.language-js
                         | var granimInstance = new Granim({
-                        |    element: '',
-                        |    name: 'granim',
-                        |    elToSetClassOn: 'body',
-                        |    direction: 'diagonal',
-                        |    isPausedWhenNotInView: false,
-                        |    opacity: [1, 1],
-                        |    stateTransitionSpeed: 1000,
-                        |    states : {
-                        |        "default-state": {
-                        |            gradients: [
-                        |                ['#834d9b', '#d04ed6'],
-                        |                ['#1CD8D2', '#93EDC7']
-                        |            ],
-                        |            transitionSpeed: 5000,
-                        |            loop: true
-                        |        },
-                        |        "dark-state": {
-                        |            gradients: [
-                        |                ['#757F9A', '#D7DDE8'],
-                        |                ['#5C258D', '#4389A2']
-                        |            ],
-                        |            transitionSpeed: 5000,
-                        |            loop: true
-                        |        }
-                        |    },
-                        | <br>
+                        |     element: '',
+                        |     name: 'granim',
+                        |     elToSetClassOn: 'body',
+                        |     direction: 'diagonal',
+                        |     isPausedWhenNotInView: false,
+                        |     opacity: [1, 1],
+                        |     stateTransitionSpeed: 1000,
+                        |     states : {
+                        |         "default-state": {
+                        |             gradients: [
+                        |                 ['#834d9b', '#d04ed6'],
+                        |                 ['#1CD8D2', '#93EDC7']
+                        |             ],
+                        |             transitionSpeed: 5000,
+                        |             loop: true
+                        |         },
+                        |         "dark-state": {
+                        |             gradients: [
+                        |                 ['#757F9A', '#D7DDE8'],
+                        |                 ['#5C258D', '#4389A2']
+                        |             ],
+                        |             transitionSpeed: 5000,
+                        |             loop: true
+                        |         }
+                        |     },
                         |     onStart: function() {
-                        |        console.log('Granim: onStart');
+                        |         console.log('Granim: onStart');
                         |     },
-                        | <br>
                         |     onGradientChange: function(colorDetails) {
-                        |        console.log('Granim: onGradientChange, details: ');
-                        |        console.log(colorDetails);
+                        |         console.log('Granim: onGradientChange, details: ');
+                        |         console.log(colorDetails);
                         |     },
-                        | <br>
                         |     onEnd: function() {
-                        |        console.log('Granim: onEnd');
+                        |         console.log('Granim: onEnd');
                         |     }
                         | );
                 p
@@ -266,31 +268,31 @@ html(lang="en")
                 pre
                     code.language-js
                         | var granimInstance = new Granim({
-                        |    element: '',
-                        |    name: 'granim',
-                        |    elToSetClassOn: 'body',
-                        |    direction: 'diagonal',
-                        |    isPausedWhenNotInView: false,
-                        |    opacity: [1, 1, .5, 1],
-                        |    stateTransitionSpeed: 1000,
-                        |    states : {
-                        |        "default-state": {
-                        |            gradients: [
-                        |                ['#834d9b', '#d04ed6', '#1CD8D2', '#93EDC7'],
-                        |                ['#1CD8D2', '#93EDC7', '#757F9A', '#4389A2']
-                        |            ],
-                        |            transitionSpeed: 5000,
-                        |            loop: true
-                        |        },
-                        |        "dark-state": {
-                        |            gradients: [
-                        |                ['#757F9A', '#D7DDE8', '#1CD8D2', '#93EDC7'],
-                        |                ['#5C258D', '#4389A2', '#1CD8D2', '#93EDC7']
-                        |            ],
-                        |            transitionSpeed: 5000,
-                        |            loop: true
-                        |        }
-                        |    }
+                        |     element: '',
+                        |     name: 'granim',
+                        |     elToSetClassOn: 'body',
+                        |     direction: 'diagonal',
+                        |     isPausedWhenNotInView: false,
+                        |     opacity: [1, 1, .5, 1],
+                        |     stateTransitionSpeed: 1000,
+                        |     states : {
+                        |         "default-state": {
+                        |             gradients: [
+                        |                 ['#834d9b', '#d04ed6', '#1CD8D2', '#93EDC7'],
+                        |                 ['#1CD8D2', '#93EDC7', '#757F9A', '#4389A2']
+                        |             ],
+                        |             transitionSpeed: 5000,
+                        |             loop: true
+                        |         },
+                        |         "dark-state": {
+                        |             gradients: [
+                        |                 ['#757F9A', '#D7DDE8', '#1CD8D2', '#93EDC7'],
+                        |                 ['#5C258D', '#4389A2', '#1CD8D2', '#93EDC7']
+                        |             ],
+                        |             transitionSpeed: 5000,
+                        |             loop: true
+                        |         }
+                        |     }
                         | );
 
             include includes/footer
